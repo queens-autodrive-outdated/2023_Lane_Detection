@@ -1,7 +1,7 @@
 # Lane Detection: Current Progress
 This is the latest output of one test video 2
 
-** PLACEHOLDER**
+ ![!Lane detection demo](https://github.com/ryanbaker77/lane-detection/blob/main/Output/LaneDetectionDemo.gif)
 
 
 # Requirements
@@ -54,9 +54,7 @@ We will need to figure out how to implement newer/different models, likely to be
  ```
  python webcamLaneDetection.py
  ```
- 
- # [Inference video Example](https://youtu.be/0Owf6gef1Ew) 
- ![!Ultrafast lane detection on video](https://github.com/ibaiGorordo/Ultrafast-Lane-Detection-Inference-Pytorch-/blob/main/doc/img/laneDetection.gif)
+
  
 
  
