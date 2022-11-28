@@ -29,8 +29,8 @@ We will need to figure out how to implement newer/different models, likely to be
 
 # Current Input and Output
 
- **Input**: RGB image of size 1280 x 720 pixels.
- **Output**: Keypoints for a maximum of 4 lanes (left-most lane, left lane, right lane, and right-most lane).
+* **Input**: RGB image of size 1280 x 720 pixels.
+* **Output**: Keypoints for a maximum of 4 lanes (left-most lane, left lane, right lane, and right-most lane).
  
 
 
