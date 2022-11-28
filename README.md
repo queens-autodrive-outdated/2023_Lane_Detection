@@ -1,5 +1,5 @@
 # Lane Detection: Current Progress
-This is the latest output of one test video 2
+This is the latest output of one of the test video
 
  ![!Lane detection demo](https://github.com/ryanbaker77/lane-detection/blob/main/Output/LaneDetectionDemo.gif)
 
