@@ -1,8 +1,7 @@
 # Lane Detection: Current Progress
-This is the latest output of one of the test video
 
- ![!Lane detection demo](https://github.com/ryanbaker77/lane-detection/blob/main/Output/LaneDetectionDemo.gif)
-
+ ![!Lane detection demo 1](https://github.com/ryanbaker77/lane-detection/blob/main/Output/LDgit1.gif)
+ ![!Lane detection demo 2](https://github.com/ryanbaker77/lane-detection/blob/main/Output/LDgit2.gif)
 
 # Requirements
 

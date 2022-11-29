@@ -131,3 +131,7 @@ dmypy.json
 
 #Pretrained Models
 *.pth
+
+# Test Videos
+Output/KingstonTestVideo.mp4
+Test_Videos/KingstonTestVideo.mp4
