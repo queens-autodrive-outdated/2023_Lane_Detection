@@ -1,9 +1,8 @@
 # Lane Detection: Current Progress
 
-![!Lane detection demo 1](https://github.com/ryanbaker77/lane-detection/blob/main/demos/LDgif1.gif) 
-![Demo 2](https://github.com/ryanbaker77/lane-detection/blob/main/demos/LDgif2.gif)
-![Demo 3](https://github.com/ryanbaker77/lane-detection/blob/main/demos/LDgif3.gif) 
-![Demo 4](https://github.com/ryanbaker77/lane-detection/blob/main/demos/LDgif4.gif)
+![!Lane detection demo 1](https://github.com/ryanbaker77/lane-detection/blob/main/demos/LDgif1.gif) ![Demo 2](https://github.com/ryanbaker77/lane-detection/blob/main/demos/LDgif2.gif)
+![Demo 3](https://github.com/ryanbaker77/lane-detection/blob/main/demos/LDgif3.gif) ![Demo 4](https://github.com/ryanbaker77/lane-detection/blob/main/demos/LDgif4.gif)
+
 
 # Requirements
 
@@ -36,7 +35,7 @@ We will need to figure out how to implement newer/different models, likely to be
 
 
 
-# Examples
+# Running the Code
 
  **Image inference**: Takes in provided images and displays the detected lane on the image. Place all test images in the **Test_Images** folder. The output of each photo is saved in **Output**
  
