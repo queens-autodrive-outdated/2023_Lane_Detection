@@ -1,15 +1,7 @@
 # Lane Detection: Current Progress
 
-![!Lane detection demo 1](https://github.com/ryanbaker77/lane-detection/blob/main/demos/LDgif1.gif) ![Demo 2](https://github.com/ryanbaker77/lane-detection/blob/main/demos/LDgif2.gif)
-![Demo 3](https://github.com/ryanbaker77/lane-detection/blob/main/demos/LDgif3.gif) ![Demo 4](https://github.com/ryanbaker77/lane-detection/blob/main/demos/LDgif4.gif)
-
-A | B
-- | - 
-![Campus](https://github.com/ryanbaker77/lane-detection/blob/main/demos/LDgif1.gif) | ![Union](https://github.com/ryanbaker77/lane-detection/blob/main/demos/LDgif2.gif)
-
-C | D
-- | - 
-![Union&SJA](https://github.com/ryanbaker77/lane-detection/blob/main/demos/LDgif3.gif) | ![Johnson](https://github.com/ryanbaker77/lane-detection/blob/main/demos/LDgif4.gif)
+![Campus](https://github.com/ryanbaker77/lane-detection/blob/main/demos/LDgif1.gif) ![Union](https://github.com/ryanbaker77/lane-detection/blob/main/demos/LDgif2.gif)
+![Union&SJA](https://github.com/ryanbaker77/lane-detection/blob/main/demos/LDgif3.gif) ![Johnson](https://github.com/ryanbaker77/lane-detection/blob/main/demos/LDgif4.gif)
 
 # Requirements
 
