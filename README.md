@@ -1,7 +1,9 @@
 # Lane Detection: Current Progress
 
- ![!Lane detection demo 1](https://github.com/ryanbaker77/lane-detection/blob/main/Output/LDgit1.gif)
- ![!Lane detection demo 2](https://github.com/ryanbaker77/lane-detection/blob/main/Output/LDgit2.gif)
+![!Lane detection demo 1](https://github.com/ryanbaker77/lane-detection/blob/main/demos/LDgit1.gif)
+![!Lane detection demo 2](https://github.com/ryanbaker77/lane-detection/blob/main/demos/LDgit2.gif)
+![!Lane detection demo 3](https://github.com/ryanbaker77/lane-detection/blob/main/demos/LDgit3.gif)
+![!Lane detection demo 4](https://github.com/ryanbaker77/lane-detection/blob/main/demos/LDgit4.gif)
 
 # Requirements
 
