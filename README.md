@@ -37,13 +37,15 @@ We will need to figure out how to implement newer/different models, likely to be
 
 # Running the Code
 
- **Image inference**: Takes in provided images and displays the detected lane on the image. Place all test images in the **Test_Images** folder. The output of each photo is saved in **Output**
+ **Image inference**: 
+ Takes in provided images and displays the detected lane on the image. Place all test images in the **Test_Images** folder. The output of each photo is saved in **Output**
  
  ```
  python imageLaneDetection.py 
  ```
  
-**Video inference**: Takes .mp4 videos saved in the **Test_Videos** folder and detects the lane on each frame. The output for each video is saved in **Output** as an .mp4
+**Video inference**: 
+Takes .mp4 videos saved in the **Test_Videos** folder and detects the lane on each frame. The output for each video is saved in **Output** as an .mp4
  
  ```
  python videoLaneDetection.py
