@@ -58,4 +58,8 @@ We will need to figure out how to implement newer/different models, likely to be
 
  
 
- 
+ # Progress
+
+ ![!demo 2](https://github.com/ryanbaker77/lane-detection/blob/main/demos/LDgit2.gif)
+![!demo 3](https://github.com/ryanbaker77/lane-detection/blob/main/demos/LDgit3.gif)
+![!demo 4](https://github.com/ryanbaker77/lane-detection/blob/main/demos/LDgit4.gif)
