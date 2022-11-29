@@ -2,8 +2,7 @@
 
 ![!Lane detection demo 1](https://github.com/ryanbaker77/lane-detection/blob/main/demos/LDgit1.gif)
 ![!demo 2](https://github.com/ryanbaker77/lane-detection/blob/main/demos/LDgit2.gif)
-![!demo 3](https://github.com/ryanbaker77/lane-detection/blob/main/demos/LDgit3.gif)
-![!demo 4](https://github.com/ryanbaker77/lane-detection/blob/main/demos/LDgit4.gif)
+
 
 # Requirements
 
@@ -56,10 +55,3 @@ We will need to figure out how to implement newer/different models, likely to be
  python webcamLaneDetection.py
  ```
 
- 
-
- # Progress
-
- ![!demo 2](https://github.com/ryanbaker77/lane-detection/blob/main/demos/LDgit2.gif)
-![!demo 3](https://github.com/ryanbaker77/lane-detection/blob/main/demos/LDgit3.gif)
-![!demo 4](https://github.com/ryanbaker77/lane-detection/blob/main/demos/LDgit4.gif)
