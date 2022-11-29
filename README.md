@@ -1,7 +1,7 @@
 # Lane Detection: Current Progress
 
-![Campus](https://github.com/ryanbaker77/lane-detection/blob/main/demos/LDgif1.gif) ![Union](https://github.com/ryanbaker77/lane-detection/blob/main/demos/LDgif2.gif)
-![Union&SJA](https://github.com/ryanbaker77/lane-detection/blob/main/demos/LDgif3.gif) ![Johnson](https://github.com/ryanbaker77/lane-detection/blob/main/demos/LDgif4.gif)
+![Campus](https://github.com/ryanbaker77/lane-detection/blob/main/demos/LDgif1.gif) 
+
 
 # Requirements
 
@@ -57,3 +57,6 @@ Takes .mp4 videos saved in the **Test_Videos** folder and detects the lane on ea
  ```
 
 ## Kingston Demos
+![Union](https://github.com/ryanbaker77/lane-detection/blob/main/demos/LDgif2.gif)
+![Union&SJA](https://github.com/ryanbaker77/lane-detection/blob/main/demos/LDgif3.gif) 
+![Johnson](https://github.com/ryanbaker77/lane-detection/blob/main/demos/LDgif4.gif)
