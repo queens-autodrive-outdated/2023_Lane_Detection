@@ -10,7 +10,7 @@ More demos at bottom of page
  
 # Installation
 ```
-pip install -r requirements
+pip install -r requirements.txt
 ```
 
 #### Pytorch:
