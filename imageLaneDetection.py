@@ -7,7 +7,7 @@ from ultrafastLaneDetector import UltrafastLaneDetector, ModelType
 TUSIMPLE = 0
 CULANE = 1
 
-model=TUSIMPLE
+model=CULANE
 
 if model:
     model_path = "models/culane_18.pth"

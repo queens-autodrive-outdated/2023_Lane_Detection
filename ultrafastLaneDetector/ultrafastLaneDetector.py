@@ -114,11 +114,16 @@ class UltrafastLaneDetector():
 
 		# Process output data
 		self.lanes_points, self.lanes_detected = self.process_output(output, self.cfg)
+		
+		print()
+		print(self.lanes_points)
 
 		# Draw depth image
-		visualization_img = self.draw_lanes(image, self.lanes_points, self.lanes_detected, self.cfg, draw_points)
+		# visualization_img = self.draw_lanes(image, self.lanes_points, self.lanes_detected, self.cfg, draw_points)
 
-		return visualization_img
+		# return visualization_img
+
+		return self.lanes_points, self.lanes_detected
 
 	def prepare_input(self, img):
 		# Transform the image for inference

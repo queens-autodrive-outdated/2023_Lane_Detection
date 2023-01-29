@@ -14,13 +14,13 @@ elif not model:
     model_path = "models/tusimple_18.pth"
     model_type = ModelType.TUSIMPLE
     
-use_gpu = False     # To use gpu, must install Cuda and Pytorch with Cuda enabled
+use_gpu = True     # To use gpu, must install Cuda and Pytorch with Cuda enabled
 
 
 # Initialize lane detection model
 lane_detector = UltrafastLaneDetector(model_path, model_type, use_gpu)
 
-directory="Test_Videos"
+directory="Test_Videos/To_Run"
 for file in os.listdir(directory):
 
     # Initialize video
@@ -40,7 +40,15 @@ for file in os.listdir(directory):
         except:
             continue
         if ret:
-            output_img=lane_detector.detect_lanes(frame) # Detect Lanes
+            lane_points, lane_detected=lane_detector.detect_lanes(frame) # Detect Lanes
+
+            # Play around with point locations
+
+            output_img=lane_detector.draw_lanes(frame, )
+
+
+
+
             output_img=cv2.resize(output_img, size)
             cv2.imshow("Detected lanes", output_img)
             out.write(output_img)
