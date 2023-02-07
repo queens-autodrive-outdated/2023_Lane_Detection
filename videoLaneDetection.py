@@ -14,7 +14,7 @@ elif not model:
     model_path = "models/tusimple_18.pth"
     model_type = ModelType.TUSIMPLE
     
-use_gpu = False     # To use gpu, must install Cuda and Pytorch with Cuda enabled
+use_gpu = True     # To use gpu, must install Cuda and Pytorch with Cuda enabled
 
 
 # Initialize lane detection model
