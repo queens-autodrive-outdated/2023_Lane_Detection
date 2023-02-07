@@ -1,5 +1,12 @@
 import cv2, os
 from ultrafastLaneDetector import UltrafastLaneDetector, ModelType
+import numpy as np
+
+lanePoint_avg=np.array([],[])
+
+def smooth_lanes(lanes_points):
+    
+
 
 # Change model value to choose between CULane and TU Simple datasets
 TUSIMPLE = 0
