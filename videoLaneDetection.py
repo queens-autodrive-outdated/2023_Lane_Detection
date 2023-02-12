@@ -3,9 +3,25 @@ from ultrafastLaneDetector import UltrafastLaneDetector, ModelType
 import numpy as np
 
 lanePoint_avg=np.array([],[])
+threshold=50
+last_frame=0
 
 def smooth_lanes(lanes_points):
+    smoothed_points=lanes_points
+    for i in range(1,2):
+        for j in range(len(smoothed_points[i])):
+            if (len(lanePoint_avg[i]))<j: # Check if exists
+                if abs(smoothed_points[i][j]-lanePoint_avg[i][j])>threshold: # if change outside the threshold
+                    smoothed_points[i][j]=lanePoint_avg[i][j]                # Update 
     
+    # Update Average
+
+    # if buffer is full:
+        # lanePoint_avg[i][1]=(lanePoint_avg[i][2]-1)*lanePoint_avg[i][1]+lanes_points[i]
+    # else:
+        # lanePoint_avg[i][1]=(lanePoint_avg[i][2])*lanePoint_avg[i][1]+lanes_points[i]
+        #lanePoint_avg[i][2]+=1
+    # if index doesn't exist, lanePoint_avg[i][2]-=1
 
 
 # Change model value to choose between CULane and TU Simple datasets
@@ -14,12 +30,13 @@ CULANE = 1
 
 model=CULANE
 
+# Model used should be CULANE
 if model:
     model_path = "models/culane_18.pth"
     model_type = ModelType.CULANE
-elif not model:
-    model_path = "models/tusimple_18.pth"
-    model_type = ModelType.TUSIMPLE
+# elif not model:
+#     model_path = "models/tusimple_18.pth"
+#     model_type = ModelType.TUSIMPLE
     
 use_gpu = True     # To use gpu, must install Cuda and Pytorch with Cuda enabled
 
