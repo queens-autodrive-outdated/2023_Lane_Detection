@@ -14,14 +14,14 @@ def smooth_lanes(lanes_points):
                 if abs(smoothed_points[i][j]-lanePoint_avg[i][j])>threshold: # if change outside the threshold
                     smoothed_points[i][j]=lanePoint_avg[i][j]                # Update 
     
-    # Update Average
+            # Update Average
 
-    # if buffer is full:
-        # lanePoint_avg[i][1]=(lanePoint_avg[i][2]-1)*lanePoint_avg[i][1]+lanes_points[i]
-    # else:
-        # lanePoint_avg[i][1]=(lanePoint_avg[i][2])*lanePoint_avg[i][1]+lanes_points[i]
-        #lanePoint_avg[i][2]+=1
-    # if index doesn't exist, lanePoint_avg[i][2]-=1
+            # if buffer is full:
+                # lanePoint_avg[i][1]=(lanePoint_avg[i][2]-1)*lanePoint_avg[i][1]+lanes_points[i]
+            # else:
+                # lanePoint_avg[i][1]=(lanePoint_avg[i][2])*lanePoint_avg[i][1]+lanes_points[i]
+                #lanePoint_avg[i][2]+=1
+            # if index doesn't exist, lanePoint_avg[i][2]-=1
 
 
 # Change model value to choose between CULane and TU Simple datasets
