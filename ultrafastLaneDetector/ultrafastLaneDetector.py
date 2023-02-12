@@ -123,7 +123,7 @@ class UltrafastLaneDetector():
 
 		# return visualization_img
 
-		return self.lanes_points, self.lanes_detected
+		return self.lanes_points, self.lanes_detected, self.cfg
 
 	def prepare_input(self, img):
 		# Transform the image for inference

@@ -2,26 +2,30 @@ import cv2, os
 from ultrafastLaneDetector import UltrafastLaneDetector, ModelType
 import numpy as np
 
-lanePoint_avg=np.array([],[])
+lanePoint_avg=np.array([[[0,0],[0,0],[0,0],[0,0],[0,0],[0,0],[0,0],[0,0],[0,0],[0,0],[0,0]],[[0,0],[0,0],[0,0],[0,0],[0,0],[0,0],[0,0],[0,0],[0,0],[0,0],[0,0]]])
 threshold=50
-last_frame=0
+buffer_size=10
 
 def smooth_lanes(lanes_points):
     smoothed_points=lanes_points
     for i in range(1,2):
         for j in range(len(smoothed_points[i])):
             if (len(lanePoint_avg[i]))<j: # Check if exists
-                if abs(smoothed_points[i][j]-lanePoint_avg[i][j])>threshold: # if change outside the threshold
-                    smoothed_points[i][j]=lanePoint_avg[i][j]                # Update 
+                if lanePoint_avg[i][j][1]>3:
+                    if abs(smoothed_points[i][j]-lanePoint_avg[i][j][0])>threshold: # if change outside the threshold
+                        smoothed_points[i][j]=lanePoint_avg[i][j][0]              # Update 
     
             # Update Average
-
-            # if buffer is full:
-                # lanePoint_avg[i][1]=(lanePoint_avg[i][2]-1)*lanePoint_avg[i][1]+lanes_points[i]
-            # else:
-                # lanePoint_avg[i][1]=(lanePoint_avg[i][2])*lanePoint_avg[i][1]+lanes_points[i]
-                #lanePoint_avg[i][2]+=1
-            # if index doesn't exist, lanePoint_avg[i][2]-=1
+            if lanePoint_avg[i][j][1]<buffer_size:
+                lanePoint_avg[i][j][0]=(lanePoint_avg[i][j][1])*lanePoint_avg[i][j][0]+lanes_points[i][j]
+                lanePoint_avg[i][j][1]+=2 # Add 2 so that 1 is removed
+            else:
+                lanePoint_avg[i][0]=(lanePoint_avg[i][j][1]-1)*lanePoint_avg[i][j][0]+lanes_points[i][j]
+                lanePoint_avg[i][1]+=1 # 1 removed, so add 1 to stay the same
+                
+        for i in range(len(lanePoint_avg[i])):
+            lanePoint_avg[i][j][1]-=1
+    return smoothed_points
 
 
 # Change model value to choose between CULane and TU Simple datasets
@@ -64,14 +68,12 @@ for file in os.listdir(directory):
         except:
             continue
         if ret:
-            lane_points, lane_detected=lane_detector.detect_lanes(frame) # Detect Lanes
+            lane_points, lane_detected, cfg=lane_detector.detect_lanes(frame) # Detect Lanes
+            pointsOnLanes=smooth_lanes(lane_points)
 
             # Play around with point locations
 
-            output_img=lane_detector.draw_lanes(frame, )
-
-
-
+            output_img=lane_detector.draw_lanes(frame, lane_points, lane_detected, cfg, True)
 
             output_img=cv2.resize(output_img, size)
             cv2.imshow("Detected lanes", output_img)
