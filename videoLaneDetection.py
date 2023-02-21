@@ -2,30 +2,30 @@ import cv2, os
 from ultrafastLaneDetector import UltrafastLaneDetector, ModelType
 import numpy as np
 
-lanePoint_avg=np.array([[[0,0],[0,0],[0,0],[0,0],[0,0],[0,0],[0,0],[0,0],[0,0],[0,0],[0,0]],[[0,0],[0,0],[0,0],[0,0],[0,0],[0,0],[0,0],[0,0],[0,0],[0,0],[0,0]]])
-threshold=50
-buffer_size=10
+# lanePoint_avg=np.array([[[0,0],[0,0],[0,0],[0,0],[0,0],[0,0],[0,0],[0,0],[0,0],[0,0],[0,0]],[[0,0],[0,0],[0,0],[0,0],[0,0],[0,0],[0,0],[0,0],[0,0],[0,0],[0,0]]])
+# threshold=50
+# buffer_size=10
 
-def smooth_lanes(lanes_points):
-    smoothed_points=lanes_points
-    for i in range(1,2):
-        for j in range(len(smoothed_points[i])):
-            if (len(lanePoint_avg[i]))<j: # Check if exists
-                if lanePoint_avg[i][j][1]>3:
-                    if abs(smoothed_points[i][j]-lanePoint_avg[i][j][0])>threshold: # if change outside the threshold
-                        smoothed_points[i][j]=lanePoint_avg[i][j][0]              # Update 
+# def smooth_lanes(lanes_points):
+#     smoothed_points=lanes_points
+#     for i in range(1,2):
+#         for j in range(len(smoothed_points[i])):
+#             if (len(lanePoint_avg[i]))<j: # Check if exists
+#                 if lanePoint_avg[i][j][1]>3:
+#                     if abs(smoothed_points[i][j]-lanePoint_avg[i][j][0])>threshold: # if change outside the threshold
+#                         smoothed_points[i][j]=lanePoint_avg[i][j][0]              # Update 
     
-            # Update Average
-            if lanePoint_avg[i][j][1]<buffer_size:
-                lanePoint_avg[i][j][0]=(lanePoint_avg[i][j][1])*lanePoint_avg[i][j][0]+lanes_points[i][j]
-                lanePoint_avg[i][j][1]+=2 # Add 2 so that 1 is removed
-            else:
-                lanePoint_avg[i][0]=(lanePoint_avg[i][j][1]-1)*lanePoint_avg[i][j][0]+lanes_points[i][j]
-                lanePoint_avg[i][1]+=1 # 1 removed, so add 1 to stay the same
+#             # Update Average
+#             if lanePoint_avg[i][j][1]<buffer_size:
+#                 lanePoint_avg[i][j][0]=(lanePoint_avg[i][j][1])*lanePoint_avg[i][j][0]+lanes_points[i][j]
+#                 lanePoint_avg[i][j][1]+=2 # Add 2 so that 1 is removed
+#             else:
+#                 lanePoint_avg[i][0]=(lanePoint_avg[i][j][1]-1)*lanePoint_avg[i][j][0]+lanes_points[i][j]
+#                 lanePoint_avg[i][1]+=1 # 1 removed, so add 1 to stay the same
                 
-        for i in range(len(lanePoint_avg[i])):
-            lanePoint_avg[i][j][1]-=1
-    return smoothed_points
+#         for i in range(len(lanePoint_avg[i])):
+#             lanePoint_avg[i][j][1]-=1
+#     return smoothed_points
 
 
 # Change model value to choose between CULane and TU Simple datasets
@@ -44,6 +44,9 @@ if model:
     
 use_gpu = True     # To use gpu, must install Cuda and Pytorch with Cuda enabled
 
+BUFFERSIZE=20
+lane_buffer=np.empty(0)
+bufferPos=0
 
 # Initialize lane detection model
 lane_detector = UltrafastLaneDetector(model_path, model_type, use_gpu)
@@ -69,7 +72,20 @@ for file in os.listdir(directory):
             continue
         if ret:
             lane_points, lane_detected, cfg=lane_detector.detect_lanes(frame) # Detect Lanes
-            pointsOnLanes=smooth_lanes(lane_points)
+
+            if len(buffer)<BUFFERSIZE:
+                    lane_buffer=np.append(lane_buffer, i)
+                else:
+                    
+                    # Do point manipulation
+
+                    lane_buffer[bufferPos]=i
+                
+                if bufferPos<BUFFERSIZE-1:
+                    bufferPos+=1
+                else:
+                    bufferPos=0
+
 
             # Play around with point locations
 
