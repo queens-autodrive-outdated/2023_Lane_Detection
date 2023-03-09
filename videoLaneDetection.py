@@ -2,32 +2,6 @@ import cv2, os
 from ultrafastLaneDetector import UltrafastLaneDetector, ModelType
 import numpy as np
 
-# lanePoint_avg=np.array([[[0,0],[0,0],[0,0],[0,0],[0,0],[0,0],[0,0],[0,0],[0,0],[0,0],[0,0]],[[0,0],[0,0],[0,0],[0,0],[0,0],[0,0],[0,0],[0,0],[0,0],[0,0],[0,0]]])
-# threshold=50
-# buffer_size=10
-
-# def smooth_lanes(lanes_points):
-#     smoothed_points=lanes_points
-#     for i in range(1,2):
-#         for j in range(len(smoothed_points[i])):
-#             if (len(lanePoint_avg[i]))<j: # Check if exists
-#                 if lanePoint_avg[i][j][1]>3:
-#                     if abs(smoothed_points[i][j]-lanePoint_avg[i][j][0])>threshold: # if change outside the threshold
-#                         smoothed_points[i][j]=lanePoint_avg[i][j][0]              # Update 
-    
-#             # Update Average
-#             if lanePoint_avg[i][j][1]<buffer_size:
-#                 lanePoint_avg[i][j][0]=(lanePoint_avg[i][j][1])*lanePoint_avg[i][j][0]+lanes_points[i][j]
-#                 lanePoint_avg[i][j][1]+=2 # Add 2 so that 1 is removed
-#             else:
-#                 lanePoint_avg[i][0]=(lanePoint_avg[i][j][1]-1)*lanePoint_avg[i][j][0]+lanes_points[i][j]
-#                 lanePoint_avg[i][1]+=1 # 1 removed, so add 1 to stay the same
-                
-#         for i in range(len(lanePoint_avg[i])):
-#             lanePoint_avg[i][j][1]-=1
-#     return smoothed_points
-
-
 # Change model value to choose between CULane and TU Simple datasets
 TUSIMPLE = 0
 CULANE = 1
@@ -65,6 +39,10 @@ for file in os.listdir(directory):
     out = cv2.VideoWriter('Output/'+file, cv2.VideoWriter_fourcc(*'mp4v'), 30, size)
     
     cv2.namedWindow("Detected lanes", cv2.WINDOW_AUTOSIZE)	
+    import os
+    outdir = "np_outputs"
+    os.makedirs(outdir, exist_ok = True)
+    cnt = 0
     while cap.isOpened():
         try:
             ret, frame = cap.read() # Read frame from the video
@@ -73,21 +51,6 @@ for file in os.listdir(directory):
         if ret:
             lane_points, lane_detected, cfg=lane_detector.detect_lanes(frame) # Detect Lanes
 
-            if len(buffer)<BUFFERSIZE:
-                    lane_buffer=np.append(lane_buffer, i)
-                else:
-                    
-                    # Do point manipulation
-
-                    lane_buffer[bufferPos]=i
-                
-                if bufferPos<BUFFERSIZE-1:
-                    bufferPos+=1
-                else:
-                    bufferPos=0
-
-
-            # Play around with point locations
 
             output_img=lane_detector.draw_lanes(frame, lane_points, lane_detected, cfg, True)
 
