@@ -3,9 +3,11 @@ from ultrafastLaneDetector import UltrafastLaneDetector, ModelType
 import numpy as np
 
 
+
 model_path = "models/culane_18.pth"
-model_type = ModelType.CULANE
-use_gpu = True     # To use gpu, must install Cuda and Pytorch with Cuda enabled
+model_type = ModelType.CULANE 
+use_gpu = False     # To use gpu, must install Cuda and Pytorch with Cuda enabled
+
 
 # Initialize lane detection model
 lane_detector = UltrafastLaneDetector(model_path, model_type, use_gpu)

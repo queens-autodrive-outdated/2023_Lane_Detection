@@ -9,6 +9,13 @@ More demos at bottom of page
  * **OpenCV**, **Scikit-learn** and **pytorch**.
  
 # Installation
+Create Conda Environment:
+```
+conda create -n lane_det python=3.8 -y
+conda activate lane_det
+```
+
+Install required packages:
 ```
 pip install -r requirements.txt
 ```
