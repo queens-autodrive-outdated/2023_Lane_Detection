@@ -4,8 +4,7 @@ import numpy as np
 
 class LaneDetector:
     def __init__(self):
-        # model_path = "model/LaneDetection/culane_18.pth"
-        model_path = "models/culane_18.pth"
+        model_path = "model/LaneDetection/culane_18.pth"
         model_type = ModelType.CULANE
         use_gpu = True
 
