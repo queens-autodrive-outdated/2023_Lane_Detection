@@ -28,7 +28,7 @@ install CUDA before installing the CUDA enabled versions of Pytorch from the [Py
 
 ## Pretrained model
 
-The pretrained models (CULane) must be downloaded from [Ultra-Fast-Lane-Detection](https://github.com/cfzd/Ultra-Fast-Lane-Detection) and placed in the model/LaneDetection folder for the code to run. [DOWNLOAD THIS FILE](https://drive.google.com/file/d/1zXBRTw50WOzvUp6XKsi8Zrk3MUC3uFuq/view)
+The pretrained models (CULane) must be downloaded from [Ultra-Fast-Lane-Detection](https://github.com/cfzd/Ultra-Fast-Lane-Detection) and placed in the model/LaneDetection folder for the code to run. [DOWNLOAD THIS FILE - CULANE PRETRAINED MODEL](https://drive.google.com/file/d/1zXBRTw50WOzvUp6XKsi8Zrk3MUC3uFuq/view)
 
 # Current Input and Output
 
