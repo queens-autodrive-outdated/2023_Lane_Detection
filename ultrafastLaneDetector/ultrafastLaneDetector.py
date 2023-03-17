@@ -178,7 +178,7 @@ class UltrafastLaneDetector():
 			else:
 				lanes_detected.append(False)
 
-			lanes_points.append(lane_points) 			# Change this to np.array(lane_points)) if needed
+			lanes_points.append(np.array(lane_points)) 			# Change this to np.array(lane_points)) if needed
 		return np.array(lanes_points), np.array(lanes_detected)
 
 	@staticmethod
